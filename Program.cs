@@ -55,7 +55,7 @@
     static bool IsGameOver(List<string> board)
     {
         
-        return IsWinner(board, "x") || IsWinner(board, "o") || IsTie(board);
+        return IsWinner(board, "x") || IsWinner(board, "o") || IsTie(board, "x") || IsTie(board, "o");
         // if IsWinner(board, "x") || IsWinner(board, "o") || IsTie(board) {
             // return true;
         // }
@@ -77,20 +77,72 @@
             return true;
         }
 
+        else if (board[6] == player && board[7] == player && board[8] == player) {
+            return true;
+        }
+
+        else if (board[0] == player && board[3] == player && board[6] == player) {
+            return true;
+        }
+
+        else if (board[1] == player && board[4] == player && board[7] == player) {
+            return true;
+        }
+
+        else if (board[2] == player && board[5] == player && board[8] == player) {
+            return true;
+        }
+
         else if (board[2] == player && board[4] == player && board[6] == player) {
             return true;
         }
         
+        else if (board[0] == player && board[4] == player && board[8] == player) {
+            return true;
+        }
+        
+
         return false;
     }
 
     /// <summary>Determines if the board is full with no more moves possible.</summary>
     /// <param name="board">The current board.</param>
     /// <returns>True if the board is full.</returns>
-    static bool IsTie(List<string> board)
-    {
+    static bool IsTie(List<string> board, string player)
+    {        
+        if (board[0] != player && board[1] != player && board[2] != player) {
+            return true;
+        }
+
+        else if (board[3] != player && board[4] != player && board[5] != player) {
+            return true;
+        }
+
+        else if (board[6] != player && board[7] != player && board[8] != player) {
+            return true;
+        }
+
+        else if (board[0] != player && board[3] != player && board[6] != player) {
+            return true;
+        }
+
+        else if (board[1] != player && board[4] != player && board[7] != player) {
+            return true;
+        }
+
+        else if (board[2] != player && board[5] != player && board[8] != player) {
+            return true;
+        }
+
+        else if (board[2] != player && board[4] != player && board[6] != player) {
+            return true;
+        }
         
+        else if (board[0] != player && board[4] != player && board[8] != player) {
+            return true;
+        }
         
+
         return false;
     }
 
@@ -113,7 +165,9 @@
     /// <returns>A 1-based spot number (not a 0-based index)</returns>
     static int GetMoveChoice(string currentPlayer)
     {
-        return 1;
+        if (currentPlayer == "x"){
+            return 1;
+        }
     }
 
     /// <summary>
@@ -125,6 +179,8 @@
     /// <param name="currentPlayer">The current player's sign (x or o)</param>
     static void MakeMove(List<string> board, int choice, string currentPlayer)
     {
-
+        if (currentPlayer == "x" && board[0] && choice == 1) {
+            return "x";
+        }
     }
 }
