@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/CSE210-Section-7-tictactoe.csproj",
+                "${workspaceFolder}/tic-tac-toe.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/CSE210-Section-7-tictactoe.csproj",
+                "${workspaceFolder}/tic-tac-toe.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/CSE210-Section-7-tictactoe.csproj"
+                "${workspaceFolder}/tic-tac-toe.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
